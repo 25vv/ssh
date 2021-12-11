@@ -1,0 +1,15 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+      with:
+        SSHKEY: jjjjjjjjjjjjjjjjjjjjjjjj
+    - run: ssh -T git@github.com || true
